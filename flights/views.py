@@ -5,6 +5,9 @@ from rest_framework import generics
 from flights import serializers
 from flights.models import Booking, Flight
 
+class RegisterUserView(generics.CreateAPIView):
+    serializer_class = serializers.UserRegisterSerializer
+
 
 class FlightsList(generics.ListAPIView):
     queryset = Flight.objects.all()
